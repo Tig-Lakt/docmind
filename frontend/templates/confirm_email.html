@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подтверждение email — DocMind</title>
+  <link rel="stylesheet" href="/frontend/css/main.css">
+</head>
+<body>
+  <div class="auth-wrap">
+
+    <div class="auth-side">
+      <div class="auth-side-logo">Doc<span>.</span>Mind</div>
+      <div class="auth-side-heading">Проверьте почту.</div>
+      <p class="auth-side-sub">
+        Мы отправили 6-значный код подтверждения на ваш email.
+        Код действителен 10 минут.
+      </p>
+    </div>
+
+    <div class="auth-form-wrap">
+      <div class="auth-form-box">
+        <h2>Введите код</h2>
+        <p id="email-hint" class="email-hint">Код отправлен на <span id="email-display">—</span></p>
+
+        <div id="alert" class="alert"></div>
+
+        <form id="confirm-form" novalidate>
+          <div class="field">
+            <label for="code">Код подтверждения</label>
+            <input
+              type="text"
+              id="code"
+              placeholder="000000"
+              maxlength="6"
+              autocomplete="one-time-code"
+              inputmode="numeric"
+              required
+            >
+          </div>
+          <button class="btn" id="submit-btn" type="submit">Подтвердить</button>
+        </form>
+
+        <div class="resend-wrap">
+          <span class="resend-text">Не получили код?</span>
+          <a href="#" id="resend-btn" class="resend-link">Отправить повторно</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <script src="/frontend/js/confirm.js"></script>
+</body>
+</html>

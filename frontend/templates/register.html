@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация — DocMind</title>
+  <link rel="stylesheet" href="/frontend/css/main.css">
+</head>
+<body>
+  <div class="auth-wrap">
+
+    <div class="auth-side">
+      <div class="auth-side-logo">Doc<span>.</span>Mind</div>
+      <div class="auth-side-heading">Ваши документы.<br>Ваши ответы.</div>
+      <p class="auth-side-sub">
+        Загружайте PDF, Word и таблицы — и задавайте вопросы на естественном языке.
+        DocMind найдёт нужное за секунды.
+      </p>
+    </div>
+
+    <div class="auth-form-wrap">
+      <div class="auth-form-box">
+        <h2>Создать аккаунт</h2>
+        <p>Уже есть аккаунт? <a href="/api/v1/auth/login">Войти</a></p>
+
+        <div id="alert" class="alert"></div>
+
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@company.com" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" placeholder="Минимум 8 символов и цифра" required>
+          </div>
+          <button class="btn" id="submit-btn" type="submit">Создать аккаунт</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="/frontend/js/auth.js"></script>
+</body>
+</html>

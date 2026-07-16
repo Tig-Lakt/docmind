@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — DocMind</title>
+  <link rel="stylesheet" href="/frontend/css/main.css">
+</head>
+<body>
+  <div class="dash-wrap">
+
+    <nav class="dash-nav">
+      <div class="dash-nav-logo">Doc<span>.</span>Mind</div>
+      <div class="dash-nav-right">
+        <span id="user-email">—</span>
+        <a href="#" id="logout-btn">Выйти</a>
+      </div>
+    </nav>
+
+    <main class="dash-main">
+      <div class="dash-layout">
+
+        <!-- Левая колонка -->
+        <div class="dash-left">
+
+          <!-- Загрузка -->
+          <section class="upload-section">
+            <div class="upload-card" id="drop-zone">
+              <div class="upload-card-icon">↑</div>
+              <div class="upload-card-title">Загрузить файл</div>
+              <div class="upload-card-sub">PDF, DOCX, XLSX — до 50 МБ</div>
+              <label class="btn btn-outline" for="file-input">Выбрать файл</label>
+              <input type="file" id="file-input" accept=".pdf,.docx,.xlsx" hidden>
+              <div id="file-name" class="file-name"></div>
+              <button class="btn" id="upload-btn" disabled>Загрузить</button>
+              <div id="upload-alert" class="alert"></div>
+            </div>
+
+            <!-- <div class="upload-card">
+              <div class="upload-card-icon">🔗</div>
+              <div class="upload-card-title">Добавить ссылку</div>
+              <div class="upload-card-sub">Текстовая страница или статья</div>
+              <input type="url" id="url-input" class="url-input" placeholder="https://example.com/article">
+              <button class="btn" id="url-btn">Добавить</button>
+              <div id="url-alert" class="alert"></div>
+            </div> -->
+          </section>
+
+          <!-- Список документов -->
+          <section class="docs-section">
+            <div class="docs-header">
+              <h2 class="docs-title">Мои документы</h2>
+              <span id="docs-count" class="docs-count">0 документов</span>
+            </div>
+            <div id="docs-list" class="docs-list">
+              <div class="docs-empty">Загрузите первый документ</div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Правая колонка — чат -->
+        <div class="dash-right">
+          <div class="chat-wrap">
+
+            <div class="chat-header">
+              <div class="chat-header-title">Doc<span>.</span>Mind</div>
+              <div id="chat-doc-name" class="chat-doc-name">Выберите документ</div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+              <div class="chat-placeholder">
+                Выберите документ из списка слева и задайте вопрос
+              </div>
+            </div>
+
+            <div class="chat-input-wrap">
+              <input
+                type="text"
+                id="chat-input"
+                class="chat-input"
+                placeholder="Задайте вопрос по документу..."
+                disabled
+              >
+              <button class="chat-send-btn" id="chat-send-btn" disabled>↑</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="/frontend/js/dashboard.js"></script>
+</body>
+</html>
